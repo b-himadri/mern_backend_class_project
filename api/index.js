@@ -27,4 +27,5 @@ app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
 app.use("/api/orders", orderRouter);
 
-export const handler = serverless(app);
+// Default export for Vercel serverless
+export default serverless(app);
