@@ -9,18 +9,10 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-const mongo_url = encodeURIComponent(process.env.MONGO_URL);
-
-// mongoose.connect(`mongodb://localhost:27017/merncafe`).then(() => {
-//   app.listen(8080, () => {
-//     console.log("Server started");
-//   });
-// });
+const mongo_url = process.env.MONGO_URL;
 
 mongoose
-  .connect(
-    `${mongo_url}`
-  )
+  .connect(mongo_url)
   .then(() => {
     app.listen(8080, () => {
       console.log("Server started");
