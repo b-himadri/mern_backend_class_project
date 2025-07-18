@@ -45,5 +45,10 @@ app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
 app.use("/api/orders", orderRouter);
 
+app.get("/", (req, res) => {
+  res.send("Backend server is running!");
+});
+
+
 // ✅ Export app (no listen)
 export default app;
